@@ -1,0 +1,26 @@
+function main() {
+	turtle->setSpeed(2000)
+	drawSpiral(15, 4, 500)
+}
+
+function drawSpiral(spiralAngle,sides,size) {
+	var spiralDegrees := 0
+	while(spiralDegrees < 360) {
+		drawShape(angle, size)
+		turtle->rightTurn(spiralAngle)
+		spiralDegrees := spiralDegrees + spiralAngle
+	}
+}
+
+function drawShape(sides,size) {
+	var angle := 360 / sides
+	var distance := size * angle / 360
+	var degreesDrawn := 0
+	turtle->penDown()
+	while(degreesDrawn < 360) {
+		turtle->forward(distance)
+		turtle->rightTurn(angle)
+		degreesDrawn := degreesDrawn + angle
+	}
+	turtle->penUp()
+}

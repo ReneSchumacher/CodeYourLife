@@ -1,0 +1,26 @@
+function main() {
+	turtle->penUp()
+	turtle->back(200)
+	turtle->penDown()
+	turtle->setSpeed(1000)
+	rekursiverBaum(180,9,52,0.7)
+}
+
+function rekursiverBaum(length, depth, angle, factor) {
+	if(tiefe == 0) {
+		return 0
+	}else {
+		turtle->penDown()
+		turtle->setPenSize(depth / 2)
+		turtle->setPenColor(depth)
+		turtle->forward(length)
+		turtle->leftTurn(angle+20)
+		myBaum(length*factor, depth-1, angle, factor)
+		turtle->rightTurn(2 * angle)
+		myBaum(length * factor, depth - 1, angle, factor)
+		turtle->leftTurn(angle - 20)
+		turtle->penUp()
+		turtle->back(length)
+	}
+
+}

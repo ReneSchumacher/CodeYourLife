@@ -1,0 +1,41 @@
+function main() {
+	turtle->setSpeed(2000)
+	turtle->penUp()
+	drawFlower(100, red)
+	drawStem(200, green)
+	drawPetal(200, green)
+}
+
+function drawStem(size, color) {
+    turtle->rightTurn(180)
+    turtle->setPenColor(color)
+    turtle->penDown()
+    turtle->forward(size)
+    turtle->penUp()
+    turtle->rightTurn(180)
+}
+
+function drawFlower(size,color) {
+	turtle->setPenColor(color)
+	for(var i < 4) {
+	    drawPetal(size)
+	}
+}
+
+function drawPetal(size) {
+	turtle->penDown()
+	var angle := 0
+	while(angle < 90) {
+		turtle->forward(size / 45)
+		turtle->rightTurn(2)
+		angle := angle + 2
+	}
+	turtle->rightTurn(90)
+	angle := 0
+	while(angle < 90) {
+		turtle->forward(size / 45)
+		turtle->rightTurn(2)
+		angle := angle + 2
+	}
+	turtle->penUp()
+}

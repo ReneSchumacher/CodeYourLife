@@ -1,0 +1,15 @@
+function main() {
+	turtle->setSpeed(2000)
+	turtle->penDown()
+	var color := 1
+	for(var i < 72) {
+		turtle->setPenColor(color)
+		turtle->forward(400)
+		turtle->rightTurn(175)
+		if(color >= 24) {
+			color := 1
+		}else {
+			color := color + 2
+		}
+	}
+}

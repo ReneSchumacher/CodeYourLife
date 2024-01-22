@@ -1,0 +1,72 @@
+function main() {
+	turtle->setSpeed(5000)
+	var distance := 60
+	var boxes := 10
+	var color := 1
+	turtle->penUp()
+	turtle->leftTurn(90)
+	turtle->forward(500)
+	turtle->rightTurn(90)
+	for(var i < 15) {
+		turtle->setPenColor(color)
+		drawRow(distance, boxes)
+		startNewRow(distance, boxes)
+		if(color >= 24) {
+			color := 1
+		}else {
+			color := color + 2
+		}
+	}
+}
+
+function startNewRow(distance,boxes) {
+	turtle->leftTurn(90)
+	turtle->forward((boxes - 1)*1.5*distance)
+	turtle->rightTurn(90)
+	turtle->forward(sqrt(3)*distance + (boxes - 1)*0.5*distance*sqrt(3))
+}
+
+function drawRow(distance,boxes) {
+	for(var k < boxes) {
+		drawUpperSide(distance)
+		drawLowerSide(distance)
+		drawVerticalSide(distance)
+		turtle->rightTurn(150)
+	}
+
+}
+
+function drawVerticalSide(distance) {
+	turtle->penDown()
+	turtle->rightTurn(60)
+	turtle->forward(distance)
+	turtle->rightTurn(120)
+	turtle->forward(distance)
+	turtle->rightTurn(60)
+	turtle->forward(distance)
+	turtle->penUp()
+}
+
+function drawLowerSide(distance) {
+	turtle->penDown()
+	turtle->leftTurn(120)
+	turtle->forward(distance)
+	turtle->leftTurn(60)
+	turtle->forward(distance)
+	turtle->leftTurn(120)
+	turtle->forward(distance)
+	turtle->penUp()
+}
+
+function drawUpperSide(distance) {
+	turtle->penDown()
+	turtle->rightTurn(30)
+	turtle->forward(distance)
+	turtle->rightTurn(60)
+	turtle->forward(distance)
+	turtle->rightTurn(120)
+	turtle->forward(distance)
+	turtle->rightTurn(60)
+	turtle->forward(distance)
+	turtle->penUp()
+}

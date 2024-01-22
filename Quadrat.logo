@@ -1,0 +1,10 @@
+function main() {
+    turtle->setSpeed(500)
+	turtle->forward(100)
+	turtle->rightTurn(90)
+	turtle->forward(100)
+	turtle->rightTurn(90)
+	turtle->forward(100)
+	turtle->rightTurn(90)
+	turtle->forward(100)
+}

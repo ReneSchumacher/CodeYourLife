@@ -1,0 +1,17 @@
+function main() {
+	turtle->setSpeed(2000)
+	drawShape(50, 1000)
+}
+
+function drawShape(sides,size) {
+	var angle := 360 / sides
+	var distance := size * angle / 360
+	var degreesDrawn := 0
+	turtle->penDown()
+	while(degreesDrawn < 360) {
+		turtle->forward(distance)
+		turtle->rightTurn(angle)
+		degreesDrawn := degreesDrawn + angle
+	}
+	turtle->penUp()
+}

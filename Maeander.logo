@@ -1,0 +1,111 @@
+// Einfach
+function main() {
+    turtle->setSpeed(1000)
+    turtle->forward(200)
+    turtle->rightTurn(90)
+    turtle->forward(200)
+    turtle->rightTurn(90)
+    turtle->forward(100)
+    turtle->rightTurn(90)
+    turtle->forward(100)
+    turtle->leftTurn(90)
+    turtle->forward(100)
+    turtle->leftTurn(90)
+    turtle->forward(200)
+}
+
+// Funktion
+function main() {
+    turtle->setSpeed(1000)
+    maeander(100)
+}
+
+// mit Schleife
+function main() {
+    turtle->setSpeed(1000)
+    goToStart(500, 100)
+    for (var i < 10) {
+        maeander(50)
+    }
+}
+
+// Mäanderkreis
+function main() {
+    turtle->setSpeed(2000)
+    goToStart(100, 50)
+    for (var i < 10) {
+        maeanderTurn(50, 54)
+    }
+}
+
+// Komplexe Mäander
+function main() {
+    turtle->setSpeed(2000)
+    goToStart(500, 0)
+    for (var i < 10) {
+        maeanderComplexTurn(4, 20, 90)
+    }
+    gotoStart(800, 200)
+    for (var i < 10) {
+        maeanderComplexTurn(4, 20, 54)
+    }
+}
+
+function goToStart(left, down) {
+    turtle->penUp()
+    turtle->leftTurn(90)
+    turtle->forward(left)
+    turtle->leftTurn(90)
+    turtle->forward(down)
+    turtle->rightTurn(180)
+    turtle->penDown()
+}
+
+function maeander(size) {
+    turtle->forward(size)
+    turtle->rightTurn(90)
+    turtle->forward(size)
+    turtle->rightTurn(90)
+    turtle->forward(size/2)
+    turtle->rightTurn(90)
+    turtle->forward(size/2)
+    turtle->leftTurn(90)
+    turtle->forward(size/2)
+    turtle->leftTurn(90)
+    turtle->forward(size)
+    turtle->leftTurn(90)
+}
+
+function maeanderTurn(size, lastTurn) {
+    turtle->forward(size)
+    turtle->rightTurn(90)
+    turtle->forward(size)
+    turtle->rightTurn(90)
+    turtle->forward(size/2)
+    turtle->rightTurn(90)
+    turtle->forward(size/2)
+    turtle->leftTurn(90)
+    turtle->forward(size/2)
+    turtle->leftTurn(90)
+    turtle->forward(size)
+    turtle->leftTurn(lastTurn)
+}
+
+function maeanderComplexTurn(complexity, size, lastTurn) {
+    turtle->forward(complexity * size)
+    turtle->rightTurn(90)
+    var j := complexity
+    while (j > 0) {
+        turtle->forward(j * size)
+        turtle->rightTurn(90)
+        j := j - 1
+    }
+    turtle->forward(size)
+    j := 1
+    while (j <= complexity) {
+        turtle->leftTurn(90)
+        turtle->forward(j * size)
+        j := j + 1
+    }
+    turtle->leftTurn(lastTurn)
+}
