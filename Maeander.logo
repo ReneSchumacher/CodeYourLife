@@ -45,7 +45,7 @@ function main() {
     for (var i < 10) {
         maeanderComplexTurn(4, 20, 90)
     }
-    gotoStart(800, 200)
+    goToStart(800, 200)
     for (var i < 10) {
         maeanderComplexTurn(4, 20, 54)
     }

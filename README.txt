@@ -40,3 +40,10 @@ den TurtleCode (https://www.code-your-life.org/turtlecoder) kopieren kann. Einfa
 - 3dWuerfelLandschaft.logo
   Dieses deutlich komplexere Skript kombiniert all zuvor erlernten Elemente, um eine Art bunte 3D-Landschaft aus
   Würfeln zu zeichnen.
+
+- Maeander.logo  
+  Dieses Skript enthält verschiedene Funktionen zum Erstellen von Mäandern, von einfach (mit und ohne Funktionen) über
+  wiederholte Mäander (in Reihe und in Kreisform) bis hin zu komplexen Mäandern.
+
+- Rekursion.logo  
+  Dieses Skript entspricht bisher 1:1 der Vorlage zu rekursiven Bäumen.
